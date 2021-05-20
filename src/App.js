@@ -1,19 +1,19 @@
 import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
+import Header from './cmps/Header'
 
-class App extends React.Component {
-  state = {
-
-  }
-
-  render() {
-    return (
-      <div className="App ui container">
-        App
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div className="ui container">
+      <BrowserRouter >
+        <Header />
+        <div className="App ui container">
+        {/* render components here */}
+        </div>
+      </BrowserRouter >
+    </div>
+  );
 }
-
 export default App;
 
