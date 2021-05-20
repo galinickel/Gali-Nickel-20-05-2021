@@ -269,6 +269,10 @@ const WeatherDisplay = (props) => {
         if (icon < 10) return <img src={`https://developer.accuweather.com/sites/default/files/0${icon}-s.png`} />
         else return <img src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`} />
     }
+    const renderDegrees = () => {
+        const degrees = weather.DailyForecasts[0].Temperature.Maximum.Value
+        return unit ? degrees : degrees * 9 / 5 + 32
+    }
     return (<><div>
         <div className="ui card">
             <div className="content">
@@ -277,10 +281,7 @@ const WeatherDisplay = (props) => {
                 </h3>
                 <p>
                     {renderImg()}
-
-                    {unit && weather.DailyForecasts[0].Temperature.Maximum.Value}
-                    {!unit && weather.DailyForecasts[0].Temperature.Maximum.Value * 9 / 5 + 32}
-
+                    {renderDegrees()}
                 </p>
             </div>
         </div>

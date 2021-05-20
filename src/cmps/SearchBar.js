@@ -36,14 +36,14 @@ const SearchBar = (props) => {
     return (
         <div
             ref={wrapperRef}
-            className="ui input ">
-            Search Bar
+            className=" ">
             <input type="text"
                 onChange={onSearchType}
                 value={city}
                 onClick={() => setDisplay(!display)}
             />
-            {display ? <div >
+            {display ? <div
+            className="ui  container" >
                 <List  onSelect={onSelect} listType={'searchOptions'} />
             </div> : null}
         </div>

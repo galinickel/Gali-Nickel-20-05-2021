@@ -23,9 +23,10 @@ const List = props => {
         return renderArr.map((city,idx) => {
             const isInFavorites = favoritesToDisplay.find((favoriteCity) => favoriteCity.Key === city.Key)
             return (
-                <div className="dropdown-item"
+                <div className="item"
                 key={idx}>
                     <div
+                    className="header"
                         key={city.Key}
                         onClick={()=>props.onSelect(city)}
                         tabIndex="0">
@@ -33,6 +34,7 @@ const List = props => {
                         {city.LocalizedName}
                     </div>
                     <div
+                    className="description"
                         onClick={() => toggleFavoriteCity(city)}
                         key={city.LocalizedName}>
                         <i className="plus circle icon"></i>
@@ -42,7 +44,7 @@ const List = props => {
         })
     }
     return (
-        <div>
+        <div className="ui divided list ">
             {props.listType === 'searchOptions' && renderContents(cityList)}
             {props.listType === 'favorites' && renderContents(favoritesToDisplay)}
         </div>)
