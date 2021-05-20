@@ -36,7 +36,7 @@ const SearchBar = (props) => {
     return (
         <div
             ref={wrapperRef}
-            className="ui fluid search ">
+            className="ui input ">
             Search Bar
             <input type="text"
                 onChange={onSearchType}

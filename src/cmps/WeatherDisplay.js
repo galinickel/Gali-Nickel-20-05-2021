@@ -278,7 +278,9 @@ const WeatherDisplay = (props) => {
                 <p>
                     {renderImg()}
 
-                    {weather.DailyForecasts[0].Temperature.Maximum.Value}
+                    {unit && weather.DailyForecasts[0].Temperature.Maximum.Value}
+                    {!unit && weather.DailyForecasts[0].Temperature.Maximum.Value * 9 / 5 + 32}
+
                 </p>
             </div>
         </div>

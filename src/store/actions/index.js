@@ -1,6 +1,11 @@
 import {weatherAPI} from '../../apis/weather';
 import {storageService} from '../../services/storage.service'
 
+export const toggleUnit= dispatch=>{
+    console.log('hi im here');
+    dispatch({ type: 'TOGGLE_UNIT'})
+}
+
 export const searchCity = term => async dispatch=>{
     const res = await weatherAPI.query(term);
     dispatch({ type: 'SEARCH_CITY', payload: res });
