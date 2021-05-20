@@ -1,7 +1,23 @@
 /* eslint-disable import/no-anonymous-default-export */
-export default (state = {city: 'Tel Aviv', cityCode:215854}, action) => {
+const defaultCity = {
+    "Version": 1,
+    "Key": "215854",
+    "Type": "City",
+    "Rank": 31,
+    "LocalizedName": "Tel Aviv",
+    "Country": {
+        "ID": "IL",
+        "LocalizedName": "Israel"
+    },
+    "AdministrativeArea": {
+        "ID": "TA",
+        "LocalizedName": "Tel Aviv"
+    },
+    "id": "WM8brNU"
+}
+export default (state = defaultCity, action) => {
     switch (action.type) {
-        case 'SET_CODE':
+        case 'SET_CITY':
             return action.payload;
         default:
             return state;

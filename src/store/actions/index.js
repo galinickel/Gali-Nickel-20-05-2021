@@ -6,8 +6,9 @@ export const searchCity = term => async dispatch=>{
     dispatch({ type: 'SEARCH_CITY', payload: res });
 }
 
-export const setCityCode = city => async dispatch =>{
-    dispatch({ type: 'SET_CODE', payload: city });
+export const setCurrCity = city => async dispatch =>{
+    console.log('received',city,'now in actions, moving to reducer');
+    dispatch({ type: 'SET_CITY', payload: city });
 }
 
 export const getWeather = code => async dispatch=>{

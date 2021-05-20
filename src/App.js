@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 
+import Weather from './views/Weather'
+import Favorites from './views/Favorites'
 import Header from './cmps/Header'
 
 const App = () => {
@@ -9,7 +11,8 @@ const App = () => {
       <BrowserRouter >
         <Header />
         <div className="App ui container">
-        {/* render components here */}
+          <Route path="/favorites" exact component={Favorites} />
+          <Route path="/" exact component={Weather} />
         </div>
       </BrowserRouter >
     </div>
