@@ -254,6 +254,7 @@ const WeatherDisplay = (props) => {
     }
     const dispatch = useDispatch()
     const currCity = useSelector((state) => state.city)
+    const unit = useSelector((state) => state.unit)
 
     // const weather = useSelector((state) => state.weather)
 
