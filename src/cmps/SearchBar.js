@@ -1,6 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react'
-import {useDispatch } from 'react-redux';
-import { setCurrCity,searchCity} from '../store/actions/index'
+import { useDispatch } from 'react-redux';
+import { setCurrCity, searchCity } from '../store/actions/index'
 
 import List from '../cmps/List'
 
@@ -15,6 +15,7 @@ const SearchBar = (props) => {
         document.addEventListener("mousedown", handleOutsideClick)
         return () => document.removeEventListener("mousedown", handleOutsideClick)
     }, [])
+
 
     const handleOutsideClick = (ev) => {
         const { current: wrap } = wrapperRef
@@ -31,6 +32,8 @@ const SearchBar = (props) => {
         setCity(city.LocalizedName)
         dispatch(setCurrCity(city))
     }
+
+
     return (
         <div
             ref={wrapperRef}
@@ -40,10 +43,11 @@ const SearchBar = (props) => {
                 value={city}
                 onClick={() => setDisplay(!display)}
             />
-            {display ? <div
-            className="ui  container" >
-                <List  onSelect={onSelect} listType={'searchOptions'} />
-            </div> : null}
+            <div
+                className="options-list"
+                style={display? {transform: 'scaleY(1)'} : {transform: 'scaleY(0)'}}>
+                <List onSelect={onSelect} listType={'searchOptions'} />
+            </div>
         </div>
     )
 }
