@@ -38,6 +38,7 @@ const SearchBar = () => {
         <div
             ref={wrapperRef}
             className=" ">
+                <h3> Search a City...</h3>
             <input type="text"
                 placeholder="Type to Search..."
                 onChange={onSearchType}

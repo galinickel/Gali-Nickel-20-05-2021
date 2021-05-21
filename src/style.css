@@ -6,7 +6,7 @@ body{
     background-color: white;
     width: 90%;
     margin: auto;
-    height: 75vh;
+    min-height: 75vh;
 }
 .background {
     background: -webkit-linear-gradient(

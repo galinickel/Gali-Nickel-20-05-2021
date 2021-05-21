@@ -24,32 +24,45 @@ const WeatherDisplay = () => {
         else if (icon < 10) return <img src={`https://developer.accuweather.com/sites/default/files/0${icon}-s.png`} alt="weather icon" />
         else return <img src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`} alt="weather icon" />
     }
-    const renderDegrees = () => {
+    const renderDegrees = (dayNum) => {
         if (!icon) return
-        const degrees = weather.DailyForecasts[0].Temperature.Maximum.Value
-        return unit ? degrees : degrees * 9 / 5 + 32
+        const degrees = dayMode ? weather.DailyForecasts[dayNum].Temperature.Maximum.Value : weather.DailyForecasts[dayNum].Temperature.Minimum.Value
+        return unit ? degrees : Math.floor(degrees * 9 / 5 + 32)
     }
 
-
-    return (<><div>
-        <div className="ui card">
-            <div className="content">
-                {weather.DailyForecasts && <><h3 className="header">
-                    {currCity.LocalizedName}
-                </h3>
+    const renderFiveDays = () => {
+        if (!icon) return
+        return weather.DailyForecasts.map((day, idx) => {
+            const date = new Date(day.EpochDate)
+            dayMode ? icon = weather.DailyForecasts[idx].Day.Icon : icon = weather.DailyForecasts[idx].Night.Icon
+            const message = dayMode ? weather.DailyForecasts[idx].Day.ShortPhrase : weather.DailyForecasts[idx].Night.ShortPhrase
+            return <div className="ui card">
+                <div className="content">
+                    <h3 className="header">
+                        {currCity.LocalizedName}{date.toDateString()}
+                    </h3>
                     <p className="ui description">
                         {renderImg()}
-                        {renderDegrees()} °
+                        {renderDegrees(idx)} °
                 </p>
-                    {/* {weather.DailyForecasts[0].Day.ShortPhrase} */}</>}
-                {!weather.DailyForecasts &&
-                    <div>
-                        <h4>Error</h4>
-                        <p>We're having some technical difficulties! Please try again later.</p></div>
-                }
+                    <p>{message}</p>
+                </div>
             </div>
+        })
+    }
+    return (<>
+        <div>
+            {!weather.DailyForecasts &&
+                <div className="ui card">
+                    <div className="content">
+                        <h4 className="header">Error</h4>
+                        <p>We're having some technical difficulties! Please try again later.</p></div></div>
+            }
         </div>
-    </div>
+        {weather.DailyForecasts &&
+            <div>
+                {renderFiveDays()}</div>}
+
     </>)
 }
 
