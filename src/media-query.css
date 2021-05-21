@@ -5,4 +5,12 @@
     .App.ui.app-main .container {
         display: block;
     }
+    .ui.grid{
+        width: 100%;
+        margin: 1% auto;
+        
+    }
+    .ui.grid .card{
+        margin: .5rem;
+    }
 }

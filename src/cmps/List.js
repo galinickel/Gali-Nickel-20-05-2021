@@ -7,34 +7,35 @@ const List = props => {
     const dispatch = useDispatch()
     const cityList = useSelector((state) => state.cityList)
     const [favoritesToDisplay, setFavoritesToDisplay] = useState([])
-
+    const { listType } = props
     useEffect(() => {
         dispatch(getFavorites()).then(res => {
             setFavoritesToDisplay(res.payload)
         })
-    }, [favoritesToDisplay.length,dispatch])
+    }, [favoritesToDisplay.length, dispatch])
 
     const toggleFavoriteCity = city => {
         setFavoritesToDisplay([])
-        dispatch(toggleFavorite(city))}
+        dispatch(toggleFavorite(city))
+    }
 
     const renderContents = renderArr => {
-        if(props.listType==='searchOptions')  if (cityList === [] || !cityList) return
-        return renderArr.map((city,idx) => {
+        if (listType === 'searchOptions') if (cityList === [] || !cityList) return
+        return renderArr.map((city, idx) => {
             const isInFavorites = favoritesToDisplay.find((favoriteCity) => favoriteCity.Key === city.Key)
             return (
-                <div className="item"
-                key={idx}>
+                <div className={`item ui ${listType === 'favorites' ? 'card favorite-item five wide column' : null} `}
+                    key={idx}>
                     <div
-                    className="header"
+                        className="header"
                         key={city.Key}
-                        onClick={()=>props.onSelect(city)}
+                        onClick={() => props.onSelect(city)}
                         tabIndex="0">
                         <i className={`${city.Country.ID.toLowerCase()} flag`}></i>
                         {city.LocalizedName}
                     </div>
                     <div
-                    className="description"
+                        className="description"
                         onClick={() => toggleFavoriteCity(city)}
                         key={city.LocalizedName}>
                         <i className="plus circle icon"></i>
@@ -43,11 +44,14 @@ const List = props => {
                 </div>)
         })
     }
-    return (
-        <div className="ui divided list ">
-            {props.listType === 'searchOptions' && renderContents(cityList)}
-            {props.listType === 'favorites' && renderContents(favoritesToDisplay)}
-        </div>)
+    return (<div className="ui container">
+        <div className={listType==='favorites'&& favoritesToDisplay.length ? 'ui relaxed grid ' : 'ui divided list'}>
+            {listType === 'searchOptions' && renderContents(cityList)}
+            {listType === 'favorites' && renderContents(favoritesToDisplay)}
+            {listType === 'favorites' && !favoritesToDisplay.length &&<div className="favorites-empty-msg"> <p>
+                It seems awfully empty in here! Why not search some cities, and add them to your favorites?</p></div>}
+        </div>
+    </div>)
 }
 
 export default List

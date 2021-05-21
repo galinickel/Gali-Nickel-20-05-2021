@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     height: 100vh;
 }
@@ -23,9 +23,8 @@ body{
 .App.ui.app-main .container {
     display: flex;
     justify-content: space-around;
-    
 }
-.pointing.menu{
+.pointing.menu {
     width: 100%;
 }
 .options-list {
@@ -41,4 +40,23 @@ body{
     height: 3rem;
     border: 2px solid lightgray;
     border-radius: 5px;
+}
+
+.ui.grid {
+    width: 75%;
+    margin: 2%;
+}
+.ui.grid .card {
+    margin: 5px;
+}
+.ui.grid .card .description,
+.ui.grid .card .header {
+    cursor: pointer;
+}
+
+.favorites-page {
+    text-align: center;
+}
+.favorites-page .favorites-empty-msg {
+    display: block;
 }
