@@ -1,11 +1,11 @@
 import { React, useState, useEffect, useRef } from 'react'
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCurrCity, searchCity } from '../store/actions/index'
 
 import List from '../cmps/List'
 
 
-const SearchBar = (props) => {
+const SearchBar = () => {
     const dispatch = useDispatch()
     const [city, setCity] = useState('')
     const [display, setDisplay] = useState(false)
@@ -39,13 +39,14 @@ const SearchBar = (props) => {
             ref={wrapperRef}
             className=" ">
             <input type="text"
+            placeholder="Type to Search..."
                 onChange={onSearchType}
                 value={city}
                 onClick={() => setDisplay(!display)}
             />
             <div
                 className="options-list"
-                style={display? {transform: 'scaleY(1)'} : {transform: 'scaleY(0)'}}>
+                style={display ? { transform: 'scaleY(1)' } : { transform: 'scaleY(0)' }}>
                 <List onSelect={onSelect} listType={'searchOptions'} />
             </div>
         </div>

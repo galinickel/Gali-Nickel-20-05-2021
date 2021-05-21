@@ -1,6 +1,6 @@
 import { React } from 'react'
 import { Link } from 'react-router-dom'
-import { toggleUnit,toggleMode } from '../store/actions/index'
+import { toggleUnit, toggleMode } from '../store/actions/index'
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -12,7 +12,7 @@ const Header = () => {
         return unit ? 'C' : 'F'
     }
     const renderDayMode = () => {
-        return dayMode ? <i class="sun icon"></i> : <i class="moon icon"></i>
+        return dayMode ? <i className="sun icon"></i> : <i className="moon icon"></i>
     }
     return (
         <div className="ui secondary pointing menu">
@@ -26,7 +26,7 @@ const Header = () => {
                 <button
                     className="mini ui button"
                     onClick={() => dispatch(toggleUnit)}>
-                        {renderUnit()}°
+                    {renderUnit()}°
                         </button>
                 <button
                     className="mini ui button"
