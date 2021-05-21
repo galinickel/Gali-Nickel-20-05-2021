@@ -5,6 +5,10 @@ export const toggleUnit= dispatch=>{
     dispatch({ type: 'TOGGLE_UNIT'})
 }
 
+export const toggleMode= dispatch=>{
+    dispatch({ type: 'TOGGLE_MODE'})
+}
+
 export const searchCity = term => async dispatch=>{
     const res = await weatherAPI.query(term);
     dispatch({ type: 'SEARCH_CITY', payload: res });

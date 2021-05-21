@@ -1,5 +1,5 @@
 import { React, useState, useEffect, useRef } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { setCurrCity, searchCity } from '../store/actions/index'
 
 import List from '../cmps/List'

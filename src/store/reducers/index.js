@@ -4,6 +4,7 @@ import weatherReducer from './weatherReducer'
 import selectedCityReducer from './selectedCityReducer'
 import favoritesReducer from './favoritesReducer'
 import unitReducer from './unitReducer'
+import modeReducer from './modeReducer'
 
 export default combineReducers(
     {
@@ -11,6 +12,7 @@ export default combineReducers(
         weather: weatherReducer,
         city: selectedCityReducer,
         favoriteCities: favoritesReducer,
-        unit: unitReducer
+        unit: unitReducer,
+        dayMode: modeReducer
     }
 );

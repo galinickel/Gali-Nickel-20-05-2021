@@ -1,17 +1,19 @@
 import { React } from 'react'
 import { Link } from 'react-router-dom'
-import { toggleUnit } from '../store/actions/index'
+import { toggleUnit,toggleMode } from '../store/actions/index'
 import { useDispatch, useSelector } from 'react-redux';
 
 
 const Header = () => {
     const dispatch = useDispatch()
     const unit = useSelector((state) => state.unit)
-
+    const dayMode = useSelector((state) => state.dayMode)
     const renderUnit = () => {
         return unit ? 'C' : 'F'
     }
-
+    const renderDayMode = () => {
+        return dayMode ? <i class="sun icon"></i> : <i class="moon icon"></i>
+    }
     return (
         <div className="ui secondary pointing menu">
             <Link to="/" className="item">
@@ -23,7 +25,14 @@ const Header = () => {
                 </Link>
                 <button
                     className="mini ui button"
-                    onClick={() => dispatch(toggleUnit)}>{renderUnit()}°</button>
+                    onClick={() => dispatch(toggleUnit)}>
+                        {renderUnit()}°
+                        </button>
+                <button
+                    className="mini ui button"
+                    onClick={() => dispatch(toggleMode)}>
+                    {renderDayMode()}
+                </button>
             </div>
         </div>
     );
