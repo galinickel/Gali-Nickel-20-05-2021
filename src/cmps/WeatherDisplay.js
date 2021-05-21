@@ -27,25 +27,25 @@ const WeatherDisplay = () => {
     const renderDegrees = (dayNum) => {
         if (!icon) return
         const degrees = dayMode ? weather.DailyForecasts[dayNum].Temperature.Maximum.Value : weather.DailyForecasts[dayNum].Temperature.Minimum.Value
-        return unit ? degrees : Math.floor(degrees * 9 / 5 + 32)
+        return unit ? Math.floor(degrees) : Math.floor(degrees * 9 / 5 + 32)
     }
 
     const renderFiveDays = () => {
         if (!icon) return
         return weather.DailyForecasts.map((day, idx) => {
-            const date = new Date(day.EpochDate)
             dayMode ? icon = weather.DailyForecasts[idx].Day.Icon : icon = weather.DailyForecasts[idx].Night.Icon
             const message = dayMode ? weather.DailyForecasts[idx].Day.ShortPhrase : weather.DailyForecasts[idx].Night.ShortPhrase
             return <div className="ui card">
                 <div className="content">
                     <h3 className="header">
-                        {currCity.LocalizedName}{date.toDateString()}
+                        {currCity.LocalizedName} <span>{day.Date.substring(5, 10)}</span>
                     </h3>
                     <p className="ui description">
                         {renderImg()}
                         {renderDegrees(idx)} °
                 </p>
                     <p>{message}</p>
+                    <a href={weather.Headline.Link}>See More</a>
                 </div>
             </div>
         })

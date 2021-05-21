@@ -4,9 +4,9 @@ body{
 }
 #root {
     background-color: white;
-    width: 90%;
+    width: 70%;
     margin: auto;
-    min-height: 75vh;
+    height: 100%;
 }
 .background {
     background: -webkit-linear-gradient(
