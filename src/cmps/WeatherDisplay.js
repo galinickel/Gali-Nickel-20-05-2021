@@ -6,38 +6,47 @@ import { getWeather } from '../store/actions/index'
 const WeatherDisplay = () => {
     const dispatch = useDispatch();
     const currCity = useSelector((state) => state.city);
+    const dayMode = useSelector((state) => state.dayMode)
     const unit = useSelector((state) => state.unit);
-    let icon;
     const weather = useSelector((state) => state.weather);
+    let icon;
 
     useEffect(() => {
         dispatch(getWeather(currCity))
-    }, [currCity]);
-
+    }, [dispatch, currCity]);
 
     (function () {
-        if (weather.DailyForecasts) icon = weather.DailyForecasts[0].Day.Icon;
+        if (weather.DailyForecasts) { dayMode ? icon = weather.DailyForecasts[0].Day.Icon : icon = weather.DailyForecasts[0].Night.Icon }
     })()
+
     const renderImg = () => {
-        if(!icon) return
-        else if (icon < 10) return <img src={`https://developer.accuweather.com/sites/default/files/0${icon}-s.png`} alt="weather icon"/>
-        else return <img src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`} alt="weather icon"/>
+        if (!icon) return
+        else if (icon < 10) return <img src={`https://developer.accuweather.com/sites/default/files/0${icon}-s.png`} alt="weather icon" />
+        else return <img src={`https://developer.accuweather.com/sites/default/files/${icon}-s.png`} alt="weather icon" />
     }
     const renderDegrees = () => {
-        if(!icon) return
+        if (!icon) return
         const degrees = weather.DailyForecasts[0].Temperature.Maximum.Value
         return unit ? degrees : degrees * 9 / 5 + 32
     }
+
+
     return (<><div>
         <div className="ui card">
             <div className="content">
-                <h3 className="header">
+                {weather.DailyForecasts && <><h3 className="header">
                     {currCity.LocalizedName}
                 </h3>
-                <p>
-                    {renderImg()}
-                    {renderDegrees()}
+                    <p className="ui description">
+                        {renderImg()}
+                        {renderDegrees()} °
                 </p>
+                    {/* {weather.DailyForecasts[0].Day.ShortPhrase} */}</>}
+                {!weather.DailyForecasts &&
+                    <div>
+                        <h4>Error</h4>
+                        <p>We're having some technical difficulties! Please try again later.</p></div>
+                }
             </div>
         </div>
     </div>

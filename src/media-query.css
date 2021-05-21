@@ -1,0 +1,8 @@
+@media only screen and (max-width: 768px) {
+    #root {
+        width: 100%;
+    }
+    .App.ui.app-main .container {
+        display: block;
+    }
+}

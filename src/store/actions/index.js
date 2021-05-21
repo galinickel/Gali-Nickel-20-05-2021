@@ -19,8 +19,11 @@ export const setCurrCity = city => async dispatch => {
 }
 
 export const getWeather = code => async dispatch => {
-    const res = await weatherAPI.getWeather(code);
-    dispatch({ type: 'GET_WEATHER', payload: res });
+    try {
+        const res = await weatherAPI.getWeather(code);
+        dispatch({ type: 'GET_WEATHER', payload: res });
+    }
+    catch (err) { console.log(`Had an error getting to AccuWeather API.`) }
 }
 
 export const getFavorites = () => async dispatch => {

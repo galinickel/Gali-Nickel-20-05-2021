@@ -1,20 +1,44 @@
-.App.ui.app-main .container{ 
+body{
+    margin: 0;
+    height: 100vh;
+}
+#root {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    height: 75vh;
+}
+.background {
+    background: -webkit-linear-gradient(
+        top,
+        rgb(161, 219, 255) 0%,
+        rgb(203, 235, 255) 53%,
+        rgb(240, 249, 255) 100%
+    ); /* Chrome10+,Safari5.1+ */
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.App.ui.app-main .container {
     display: flex;
     justify-content: space-around;
+    
 }
-
-.options-list{
+.pointing.menu{
+    width: 100%;
+}
+.options-list {
     width: 20rem !important;
     margin: 0 !important;
     display: block !important;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform-origin: left top;
 }
 
-.ui.container input{
+.ui.container input {
     width: 20rem;
     height: 3rem;
     border: 2px solid lightgray;
-border-radius: 5px;
+    border-radius: 5px;
 }
-

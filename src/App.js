@@ -8,6 +8,7 @@ import Header from './cmps/Header'
 
 const App = () => {
   return (
+    
     <div className="ui container">
       <BrowserRouter >
         <Header />

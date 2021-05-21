@@ -1,7 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCurrCity, searchCity } from '../store/actions/index'
-
 import List from '../cmps/List'
 
 
@@ -10,11 +9,12 @@ const SearchBar = () => {
     const [city, setCity] = useState('')
     const [display, setDisplay] = useState(false)
     const wrapperRef = useRef(null)
-
+    const currCity = useSelector((state) => state.city.LocalizedName)
     useEffect(() => {
         document.addEventListener("mousedown", handleOutsideClick)
+        setCity(currCity)
         return () => document.removeEventListener("mousedown", handleOutsideClick)
-    }, [])
+    }, [currCity])
 
 
     const handleOutsideClick = (ev) => {
@@ -39,7 +39,7 @@ const SearchBar = () => {
             ref={wrapperRef}
             className=" ">
             <input type="text"
-            placeholder="Type to Search..."
+                placeholder="Type to Search..."
                 onChange={onSearchType}
                 value={city}
                 onClick={() => setDisplay(!display)}
