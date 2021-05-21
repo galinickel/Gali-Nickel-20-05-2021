@@ -14,8 +14,8 @@ async function query(term) {
     })
 }
 
-async function getWeather(code) {
-    return axios.get(WEATHER_URL + code + KEY + '&language=en-us&details=true&metric=true').then(res=>  {
+async function getWeather(city) {
+    return axios.get(WEATHER_URL + city.Key + KEY + '&language=en-us&details=true&metric=true').then(res=>  {
         return res.data
     })
 }

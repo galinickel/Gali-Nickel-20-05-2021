@@ -29,8 +29,6 @@ const SearchBar = (props) => {
     const onSelect = (city) => {
         // ev.preventDefault()
         setCity(city.LocalizedName)
-        console.log('now dispatching onSelect event');
-        console.log(city,'the city in searchbar');
         dispatch(setCurrCity(city))
     }
     return (

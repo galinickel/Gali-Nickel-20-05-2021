@@ -2,7 +2,6 @@ import {weatherAPI} from '../../apis/weather';
 import {storageService} from '../../services/storage.service'
 
 export const toggleUnit= dispatch=>{
-    console.log('hi im here');
     dispatch({ type: 'TOGGLE_UNIT'})
 }
 
@@ -12,7 +11,6 @@ export const searchCity = term => async dispatch=>{
 }
 
 export const setCurrCity = city => async dispatch =>{
-    console.log('received',city,'now in actions, moving to reducer');
     dispatch({ type: 'SET_CITY', payload: city });
 }
 
