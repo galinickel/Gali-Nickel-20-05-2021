@@ -1,4 +1,4 @@
-import { React } from 'react'
+import { React, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { toggleUnit, toggleMode } from '../store/actions/index'
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +8,12 @@ const Header = () => {
     const dispatch = useDispatch()
     const unit = useSelector((state) => state.unit)
     const dayMode = useSelector((state) => state.dayMode)
+    const date = new Date()
+    const hours = date.getHours()
+    useEffect(() => {
+        console.log(hours, 'hours');
+        if (hours < 18 && hours < 5) dispatch(toggleMode)
+    }, [hours])
     const renderUnit = () => {
         return unit ? 'C' : 'F'
     }

@@ -12,7 +12,7 @@ const List = props => {
         dispatch(getFavorites()).then(res => {
             setFavoritesToDisplay(res.payload)
         })
-    }, [favoritesToDisplay.length, dispatch])
+    }, [favoritesToDisplay.length])
 
     const toggleFavoriteCity = city => {
         setFavoritesToDisplay([])
@@ -44,7 +44,7 @@ const List = props => {
                 </div>)
         })
     }
-    return (<div className="ui container">
+    return (<div className={listType==='favorites'?'ui container' : null}>
         <div className={listType==='favorites'&& favoritesToDisplay.length ? 'ui relaxed grid ' : 'ui divided list'}>
             {listType === 'searchOptions' && renderContents(cityList)}
             {listType === 'favorites' && renderContents(favoritesToDisplay)}
