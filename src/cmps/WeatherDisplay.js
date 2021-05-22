@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeather } from '../store/actions/index'
@@ -9,6 +9,9 @@ const WeatherDisplay = () => {
     const dayMode = useSelector((state) => state.dayMode)
     const unit = useSelector((state) => state.unit);
     const weather = useSelector((state) => state.weather);
+    const [msg, setMsg] = useState('Loading...')
+    const [msgHeader, setMsgHeader] = useState('Loading')
+
     let icon;
 
     useEffect(() => {
@@ -17,6 +20,10 @@ const WeatherDisplay = () => {
 
     (function () {
         if (weather.DailyForecasts) { dayMode ? icon = weather.DailyForecasts[0].Day.Icon : icon = weather.DailyForecasts[0].Night.Icon }
+        else setTimeout(() => {
+            setMsg(`We're having some technical difficulties! Please try again later.`)
+            setMsgHeader('Error')
+        }, 2000);
     })()
 
     const renderImg = () => {
@@ -36,7 +43,7 @@ const WeatherDisplay = () => {
             dayMode ? icon = weather.DailyForecasts[idx].Day.Icon : icon = weather.DailyForecasts[idx].Night.Icon
             const message = dayMode ? weather.DailyForecasts[idx].Day.ShortPhrase : weather.DailyForecasts[idx].Night.ShortPhrase
             return <div className="ui card"
-            key={idx}>
+                key={idx}>
                 <div className="content">
                     <h3 className="header">
                         {currCity.LocalizedName} <span>{day.Date.substring(5, 10)}</span>
@@ -51,13 +58,16 @@ const WeatherDisplay = () => {
             </div>
         })
     }
+
     return (<>
         <div>
             {!weather.DailyForecasts &&
                 <div className="ui card">
                     <div className="content">
-                        <h4 className="header">Error</h4>
-                        <p>We're having some technical difficulties! Please try again later.</p></div></div>
+                        <h4 className="header">{msgHeader}</h4>
+                        <p>{msg}</p>
+                    </div>
+                </div>
             }
         </div>
         {weather.DailyForecasts &&
