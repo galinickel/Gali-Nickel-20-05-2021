@@ -2,7 +2,7 @@ import { React, useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrCity, searchCity } from '../store/actions/index'
 import List from '../cmps/List'
-
+import db from 'just-debounce'
 
 const SearchBar = () => {
     const dispatch = useDispatch()
@@ -10,9 +10,10 @@ const SearchBar = () => {
     const [display, setDisplay] = useState(false)
     const wrapperRef = useRef(null)
     const currCity = useSelector((state) => state.city.LocalizedName)
+
     useEffect(() => {
         document.addEventListener("mousedown", handleOutsideClick)
-        setCity(currCity)
+        // setCity(currCity)
         return () => document.removeEventListener("mousedown", handleOutsideClick)
     }, [currCity])
 
@@ -24,11 +25,17 @@ const SearchBar = () => {
 
     const onSearchType = async (ev) => {
         ev.preventDefault()
+        const letter = ev.nativeEvent.data
+        if (letter) {
+            const letterCode = letter.charCodeAt(0)
+            if(!(letterCode>= 65 && letterCode <= 90)&&!(letterCode>= 97 && letterCode<=122)) return
+        }
         setCity(ev.target.value)
-        dispatch(searchCity(city))
+        const debouncedDispatch = db(() => dispatch(searchCity(city)), 850)
+        debouncedDispatch()
+
     }
     const onSelect = (city) => {
-        // ev.preventDefault()
         setCity(city.LocalizedName)
         dispatch(setCurrCity(city))
     }
@@ -38,7 +45,7 @@ const SearchBar = () => {
         <div
             ref={wrapperRef}
             className=" ">
-                <h3> Search a City...</h3>
+            <h3> Search a City...</h3>
             <input type="text"
                 placeholder="Type to Search..."
                 onChange={onSearchType}
