@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './style.css'
 import './media-query.css'
@@ -13,13 +13,13 @@ const App = () => {
   return (
     <div className={dayMode ? 'background-day' : 'background-night'}>
       <div className={dayMode ? 'ui  container main-app ' : 'ui  container main-app night'}>
-        <BrowserRouter >
+        <HashRouter >
           <Header />
           <div className="App ui container  app-main ">
             <Route path="/favorites" exact component={Favorites} />
-            <Route path="/weather" exact component={Weather} />
+            <Route path="/" exact component={Weather} />
           </div>
-        </BrowserRouter >
+        </HashRouter >
       </div>
     </div>
   );
