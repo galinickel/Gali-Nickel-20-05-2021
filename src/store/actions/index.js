@@ -10,8 +10,10 @@ export const toggleMode = dispatch => {
 }
 
 export const searchCity = term => async dispatch => {
-    const res = await weatherAPI.query(term);
-    dispatch({ type: 'SEARCH_CITY', payload: res });
+   try{const res = await weatherAPI.query(term);
+    dispatch({ type: 'SEARCH_CITY', payload: res });} 
+    catch (err) { console.log(`Had an error getting to AccuWeather API.`) }
+
 }
 
 export const setCurrCity = city => async dispatch => {

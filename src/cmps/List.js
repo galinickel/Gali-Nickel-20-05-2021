@@ -1,13 +1,14 @@
 import { React, useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleFavorite, getFavorites } from '../store/actions/index'
+import { toggleFavorite, getFavorites,getWeather } from '../store/actions/index'
 
 const List = props => {
     const dispatch = useDispatch()
     const cityList = useSelector((state) => state.cityList)
     const [favoritesToDisplay, setFavoritesToDisplay] = useState([])
     const { listType } = props
+    
     useEffect(() => {
         dispatch(getFavorites()).then(res => {
             setFavoritesToDisplay(res.payload)
@@ -18,6 +19,7 @@ const List = props => {
         setFavoritesToDisplay([])
         dispatch(toggleFavorite(city))
     }
+
 
     const renderContents = renderArr => {
         if (listType === 'searchOptions') if (cityList === [] || !cityList) return
@@ -33,6 +35,8 @@ const List = props => {
                         tabIndex="0">
                         <i className={`${city.Country.ID.toLowerCase()} flag`}></i>
                         {city.LocalizedName}
+                    </div>
+                    <div>
                     </div>
                     <div
                         className="description"
