@@ -64,7 +64,7 @@ const WeatherDisplay = () => {
             {!weather.DailyForecasts &&
                 <div className="ui card">
                     <div className="content">
-                        <h4 className="header">{msgHeader}</h4>
+                        <h4 >{msgHeader}</h4>
                         <p>{msg}</p>
                     </div>
                 </div>

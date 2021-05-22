@@ -1,5 +1,15 @@
+@media only screen and (max-width: 1200px){
+    .main-app {
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width: 768px) {
-    #root {
+    .background-day,
+    .background-night{
+        background: none;
+    }
+    .main-app {
         width: 100%;
     }
     .App.ui.app-main .container {
