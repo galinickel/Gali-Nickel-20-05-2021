@@ -10,7 +10,7 @@ const SearchBar = () => {
     const [display, setDisplay] = useState(false)
     const wrapperRef = useRef(null)
     const currCity = useSelector((state) => state.city.LocalizedName)
-
+    const dayMode = useSelector((state) => state.dayMode)
     useEffect(() => {
         document.addEventListener("mousedown", handleOutsideClick)
         // setCity(currCity)
@@ -28,7 +28,7 @@ const SearchBar = () => {
         const letter = ev.nativeEvent.data
         if (letter) {
             const letterCode = letter.charCodeAt(0)
-            if(!(letterCode>= 65 && letterCode <= 90)&&!(letterCode>= 97 && letterCode<=122)) return
+            if (!(letterCode >= 65 && letterCode <= 90) && !(letterCode >= 97 && letterCode <= 122)) return
         }
         setCity(ev.target.value)
         const debouncedDispatch = db(() => dispatch(searchCity(city)), 850)
@@ -43,14 +43,14 @@ const SearchBar = () => {
 
     return (
         <div
-            ref={wrapperRef}
-            className=" ">
+            ref={wrapperRef}>
             <h3> Search a City...</h3>
             <input type="text"
                 placeholder="Type to Search..."
                 onChange={onSearchType}
                 value={city}
                 onClick={() => setDisplay(!display)}
+                className={dayMode ? null : 'night'}
             />
             <div
                 className="options-list"

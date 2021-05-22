@@ -91,6 +91,6 @@ body {
     display: block;
 }
 
-input{
+input.night{
     background-color: #2e2d2d;
 }
