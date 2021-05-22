@@ -1,14 +1,21 @@
-import React from 'react'
+import {React, useEffect} from 'react'
 import { HashRouter, Route } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import { toggleMode } from './store/actions/index'
+
 import './style.css'
 import './media-query.css'
-import './dark-mode.css'
 import Weather from './views/Weather'
 import Favorites from './views/Favorites'
 import Header from './cmps/Header'
 
 const App = () => {
+  const date = new Date()
+  const hours = date.getHours()
+  const dispatch = useDispatch()
+  useEffect(() => {
+      if (hours < 18 && hours < 5) dispatch(toggleMode)
+  }, [])
   const dayMode = useSelector((state) => state.dayMode)
   return (
     <div className={dayMode ? 'background-day' : 'background-night'}>
