@@ -17,7 +17,7 @@ const App = () => {
           <Header />
           <div className="App ui container  app-main ">
             <Route path="/favorites" exact component={Favorites} />
-            <Route path="/" exact component={Weather} />
+            <Route path="/weather" exact component={Weather} />
           </div>
         </BrowserRouter >
       </div>

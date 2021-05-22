@@ -30,7 +30,7 @@ body {
 }
 
 .night.menu,
-.night .item
+.night.menu .item
 {
     color: #686b7c !important;
     background-color: #23202c !important;
