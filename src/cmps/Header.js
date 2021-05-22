@@ -17,7 +17,7 @@ const Header = () => {
         return unit ? 'C' : 'F'
     }
     const renderDayMode = () => {
-        return dayMode ? <i className="sun icon"></i> : <i className="moon icon"></i>
+        return dayMode ? <><i className="sun icon"></i>Day Mode</> : <><i className="moon icon"></i>Night Mode</>
     }
     return (
         <div className="ui secondary pointing menu">
@@ -29,14 +29,15 @@ const Header = () => {
                     <h3>Favorites</h3>
                 </Link>
                 <button
-                    className="mini ui button"
+                    className=" ui button"
                     onClick={() => dispatch(toggleUnit)}>
                     {renderUnit()}°
                         </button>
                 <button
-                    className="mini ui button"
+                    className=" ui labeled icon button"
                     onClick={() => dispatch(toggleMode)}>
                     {renderDayMode()}
+                    
                 </button>
             </div>
         </div>

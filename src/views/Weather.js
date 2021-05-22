@@ -5,7 +5,7 @@ import WeatherDisplay from '../cmps/WeatherDisplay'
 
 const Weather = () => {
     return (
-        <div className="ui container">
+        <div className="ui container ">
             <SearchBar />
             <WeatherDisplay/>
         </div>
