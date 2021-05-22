@@ -26,7 +26,7 @@ const List = props => {
         return renderArr.map((city, idx) => {
             const isInFavorites = favoritesToDisplay.find((favoriteCity) => favoriteCity.Key === city.Key)
             return (
-                <div className={`item ui ${listType === 'favorites' ? 'card favorite-item five wide column' : null} `}
+                <div className={`item ui ${listType === 'favorites' ? 'card favorite-item five wide column' : 'search-result'} `}
                     key={idx}>
                     <div
                         className="header"
@@ -38,8 +38,9 @@ const List = props => {
                             <p><i className={`${city.Country.ID.toLowerCase()} flag`}></i>{city.LocalizedName}</p></>}
 
                     </div>
-                    <div className={listType === 'favorites' ? 'ui clearing divider' : null}>
-                    </div>
+                    {listType==='favorites' && <div className="ui clearing divider">
+                    </div>}
+                    
                     <div
                         className="description"
                         onClick={() => toggleFavoriteCity(city)}

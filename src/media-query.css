@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1200px) {
     .main-app {
         width: 80%;
     }
@@ -6,7 +6,7 @@
 
 @media only screen and (max-width: 768px) {
     .background-day,
-    .background-night{
+    .background-night {
         background: none;
     }
     .main-app {
@@ -15,15 +15,20 @@
     .App.ui.app-main .container {
         display: block;
     }
-    .app-main .container div{
+    .app-main .container div {
         margin: 10% 0;
     }
-    .ui.grid{
+    .ui.grid {
         width: 100%;
         margin: 1% auto;
-        
     }
-    .ui.grid .card{
-        margin: .5rem;
+    .ui.grid .card {
+        margin: 0.5rem;
+    }
+    .search-result {
+        margin: 5px !important;
+    }
+    .search-result .description{
+        margin: 5px !important;
     }
 }

@@ -20,7 +20,7 @@ const GetUserLocation = () => {
                 className={dayMode ? 'ui button labeled icon' : 'ui button inverted basic labeled violet icon'}
                 onClick={getLocation}
             >
-                <i class="location arrow icon"></i>
+                <i className="location arrow icon"></i>
 Search My Location
             </button>
             <p>{msg}</p>
