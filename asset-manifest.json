@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Gali-Nickel-20-05-2021/static/css/main.fcae8fd7.chunk.css",
-    "main.js": "/Gali-Nickel-20-05-2021/static/js/main.73dfe498.chunk.js",
-    "main.js.map": "/Gali-Nickel-20-05-2021/static/js/main.73dfe498.chunk.js.map",
-    "runtime-main.js": "/Gali-Nickel-20-05-2021/static/js/runtime-main.eb953bd7.js",
-    "runtime-main.js.map": "/Gali-Nickel-20-05-2021/static/js/runtime-main.eb953bd7.js.map",
-    "static/js/2.eb859726.chunk.js": "/Gali-Nickel-20-05-2021/static/js/2.eb859726.chunk.js",
-    "static/js/2.eb859726.chunk.js.map": "/Gali-Nickel-20-05-2021/static/js/2.eb859726.chunk.js.map",
-    "index.html": "/Gali-Nickel-20-05-2021/index.html",
-    "static/css/main.fcae8fd7.chunk.css.map": "/Gali-Nickel-20-05-2021/static/css/main.fcae8fd7.chunk.css.map",
-    "static/js/2.eb859726.chunk.js.LICENSE.txt": "/Gali-Nickel-20-05-2021/static/js/2.eb859726.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/Gali-Nickel-20-05-2021/static/media/night.f7629e0a.png"
+    "main.css": "/Gali-Nickel-20-05-2021/weather/static/css/main.e44f0a81.chunk.css",
+    "main.js": "/Gali-Nickel-20-05-2021/weather/static/js/main.ecb152b1.chunk.js",
+    "main.js.map": "/Gali-Nickel-20-05-2021/weather/static/js/main.ecb152b1.chunk.js.map",
+    "runtime-main.js": "/Gali-Nickel-20-05-2021/weather/static/js/runtime-main.297eba9e.js",
+    "runtime-main.js.map": "/Gali-Nickel-20-05-2021/weather/static/js/runtime-main.297eba9e.js.map",
+    "static/js/2.eb859726.chunk.js": "/Gali-Nickel-20-05-2021/weather/static/js/2.eb859726.chunk.js",
+    "static/js/2.eb859726.chunk.js.map": "/Gali-Nickel-20-05-2021/weather/static/js/2.eb859726.chunk.js.map",
+    "index.html": "/Gali-Nickel-20-05-2021/weather/index.html",
+    "static/css/main.e44f0a81.chunk.css.map": "/Gali-Nickel-20-05-2021/weather/static/css/main.e44f0a81.chunk.css.map",
+    "static/js/2.eb859726.chunk.js.LICENSE.txt": "/Gali-Nickel-20-05-2021/weather/static/js/2.eb859726.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/Gali-Nickel-20-05-2021/weather/static/media/night.f7629e0a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.eb953bd7.js",
+    "static/js/runtime-main.297eba9e.js",
     "static/js/2.eb859726.chunk.js",
-    "static/css/main.fcae8fd7.chunk.css",
-    "static/js/main.73dfe498.chunk.js"
+    "static/css/main.e44f0a81.chunk.css",
+    "static/js/main.ecb152b1.chunk.js"
   ]
 }
