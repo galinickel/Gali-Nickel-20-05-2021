@@ -1,6 +1,10 @@
+html{
+    height: 100%;
+}
 body {
     margin: 0;
     height: 100vh;
+    width: 100%;
 }
 #root { 
     height: 100vh;
@@ -10,12 +14,12 @@ body {
 
 .background-day{
 
-    background: url(/src/backgrounds/day.svg);
+    background: url(/src/backgrounds/day.png);
     background-size: 100% 100%;
 }
 .background-night{
-    background: url(/src/backgrounds/night.svg);
-
+    
+    background: url(/src/backgrounds/night.png);
     background-size: 100% 100%;
     transition: background .2s ;
 }
@@ -23,6 +27,13 @@ body {
 .night, .night div, .night .menu, .night .item{
     color: #686b7c !important;
     background-color: #151515 !important;
+}
+
+.night.menu,
+.night .item
+{
+    color: #686b7c !important;
+    background-color: #23202c !important;
 }
 .main-app {
     background-color: white;
@@ -80,4 +91,6 @@ body {
     display: block;
 }
 
-
+input{
+    background-color: #2e2d2d;
+}
