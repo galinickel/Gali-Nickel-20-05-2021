@@ -35,7 +35,8 @@ const WeatherDisplay = () => {
         return weather.DailyForecasts.map((day, idx) => {
             dayMode ? icon = weather.DailyForecasts[idx].Day.Icon : icon = weather.DailyForecasts[idx].Night.Icon
             const message = dayMode ? weather.DailyForecasts[idx].Day.ShortPhrase : weather.DailyForecasts[idx].Night.ShortPhrase
-            return <div className="ui card">
+            return <div className="ui card"
+            key={idx}>
                 <div className="content">
                     <h3 className="header">
                         {currCity.LocalizedName} <span>{day.Date.substring(5, 10)}</span>

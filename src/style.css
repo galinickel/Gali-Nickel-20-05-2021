@@ -49,6 +49,7 @@ body {
 .ui.grid .card {
     margin: 5px;
 }
+.ui.list .item .description
 .ui.grid .card .description,
 .ui.grid .card .header {
     cursor: pointer;

@@ -11,7 +11,6 @@ const Header = () => {
     const date = new Date()
     const hours = date.getHours()
     useEffect(() => {
-        console.log(hours, 'hours');
         if (hours < 18 && hours < 5) dispatch(toggleMode)
     }, [hours])
     const renderUnit = () => {
