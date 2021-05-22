@@ -9,9 +9,20 @@ export const toggleMode = dispatch => {
     dispatch({ type: 'TOGGLE_MODE' })
 }
 
+export const searchCityFromLocation = (lat, lng) => async dispatch => {
+    try {
+        const code = await weatherAPI.getCityFromGeolocation(lat, lng)
+        const res = await weatherAPI.getWeather(code);
+        dispatch({ type: 'GET_WEATHER', payload: res }); 
+    }
+    catch (err) { console.log(err); }
+}
+
 export const searchCity = term => async dispatch => {
-   try{const res = await weatherAPI.query(term);
-    dispatch({ type: 'SEARCH_CITY', payload: res });} 
+    try {
+        const res = await weatherAPI.query(term);
+        dispatch({ type: 'SEARCH_CITY', payload: res });
+    }
     catch (err) { console.log(`Had an error getting to AccuWeather API.`) }
 
 }

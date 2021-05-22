@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCurrCity, searchCity } from '../store/actions/index'
 import List from '../cmps/List'
 import db from 'just-debounce'
+import GetUserLocation from '../cmps/GetUserLocation'
 
 const SearchBar = () => {
     const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const SearchBar = () => {
         // setCity(currCity)
         return () => document.removeEventListener("mousedown", handleOutsideClick)
     }, [currCity])
-
+    
 
     const handleOutsideClick = (ev) => {
         const { current: wrap } = wrapperRef
@@ -42,9 +43,12 @@ const SearchBar = () => {
 
 
     return (
+        <>
         <div
             ref={wrapperRef}>
+            <GetUserLocation/>
             <h3> Search a City...</h3>
+
             <input type="text"
                 placeholder="Type to Search..."
                 onChange={onSearchType}
@@ -58,6 +62,7 @@ const SearchBar = () => {
                 <List onSelect={onSelect} listType={'searchOptions'} />
             </div>
         </div>
+        </>
     )
 }
 
