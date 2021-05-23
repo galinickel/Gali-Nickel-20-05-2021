@@ -5,18 +5,21 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .background-day,
-    .background-night {
-        background: none;
-    }
+
     .main-app {
         width: 100%;
+        overflow-x: hidden;
     }
+.main-app.ui.container{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
     .App.ui.app-main .container {
         display: block;
+
     }
     .app-main .container div {
-        margin: 10% 0;
+        margin: 10% 0 !important;
     }
     .ui.grid {
         width: 100%;
@@ -30,5 +33,10 @@
     }
     .search-result .description{
         margin: 5px !important;
+    }
+
+    .menu button.labeled{
+        width: unset !important;
+        font-size: 12px;
     }
 }
