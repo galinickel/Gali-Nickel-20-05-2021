@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Gali-Nickel-20-05-2021/static/css/main.5b0af7a0.chunk.css",
-    "main.js": "/Gali-Nickel-20-05-2021/static/js/main.834bcb5a.chunk.js",
-    "main.js.map": "/Gali-Nickel-20-05-2021/static/js/main.834bcb5a.chunk.js.map",
+    "main.js": "/Gali-Nickel-20-05-2021/static/js/main.5e094448.chunk.js",
+    "main.js.map": "/Gali-Nickel-20-05-2021/static/js/main.5e094448.chunk.js.map",
     "runtime-main.js": "/Gali-Nickel-20-05-2021/static/js/runtime-main.eb953bd7.js",
     "runtime-main.js.map": "/Gali-Nickel-20-05-2021/static/js/runtime-main.eb953bd7.js.map",
     "static/js/2.b45a6c1c.chunk.js": "/Gali-Nickel-20-05-2021/static/js/2.b45a6c1c.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.eb953bd7.js",
     "static/js/2.b45a6c1c.chunk.js",
     "static/css/main.5b0af7a0.chunk.css",
-    "static/js/main.834bcb5a.chunk.js"
+    "static/js/main.5e094448.chunk.js"
   ]
 }
