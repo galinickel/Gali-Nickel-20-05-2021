@@ -10,6 +10,7 @@ export const toggleMode = dispatch => {
 }
 
 export const searchCityFromLocation = (lat, lng) => async dispatch => {
+    console.log(lat,lng);
     try {
         const code = await weatherAPI.getCityFromGeolocation(lat, lng)
         const res = await weatherAPI.getWeather(code);
