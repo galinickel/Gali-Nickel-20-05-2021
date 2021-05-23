@@ -2,7 +2,7 @@ import axios from 'axios'
 const KEY = '?apikey=dWRWgogZNXfdk0HgKAeRAkpJ0nnMq5Yf'
 const SEARCH_URL = `https://dataservice.accuweather.com/locations/v1/cities/autocomplete`
 const WEATHER_URL = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/`
-const GEOLOCATION_URL = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search`
+const GEOLOCATION_URL = `https://dataservice.accuweather.com/locations/v1/cities/geoposition/search`
 
 export const weatherAPI = {
     query,
