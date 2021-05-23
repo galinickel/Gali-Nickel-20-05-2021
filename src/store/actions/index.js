@@ -10,11 +10,12 @@ export const toggleMode = dispatch => {
 }
 
 export const searchCityFromLocation = (lat, lng) => async dispatch => {
-    console.log(lat,lng);
     try {
-        const code = await weatherAPI.getCityFromGeolocation(lat, lng)
-        const res = await weatherAPI.getWeather(code);
+        const city = await weatherAPI.getCityFromGeolocation(lat, lng)
+        const res = await weatherAPI.getWeather(city);
         dispatch({ type: 'GET_WEATHER', payload: res }); 
+        dispatch({ type: 'SET_CITY', payload: city });
+
     }
     catch (err) { console.log(err); }
 }

@@ -97,10 +97,10 @@ input.night{
     background-color: #2e2d2d;
 }
 
-.content .header{
+.content .header.night{
     color: whitesmoke !important;
 }
-.content .description{
+.content .description.night{
     color: #686b7c !important;
 }
 

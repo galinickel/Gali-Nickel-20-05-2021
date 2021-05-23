@@ -7,7 +7,8 @@ const GEOLOCATION_URL = `https://dataservice.accuweather.com/locations/v1/cities
 export const weatherAPI = {
     query,
     getWeather,
-    getCityFromGeolocation
+    getCityFromGeolocation,
+    getWeatherFromKey
 }
 
 async function query(term) {
@@ -22,8 +23,14 @@ async function getWeather(city) {
     })
 }
 
+async function getWeatherFromKey(key) {
+    return axios.get(WEATHER_URL + key + KEY + '&language=en-us&details=true&metric=true').then(res=>  {
+        return res.data
+    })
+}
+
 async function getCityFromGeolocation(lat,lng){
     return axios.get(GEOLOCATION_URL+  KEY + '&q='+lat+','+lng).then(res=>  {
-        return res.data.Key
+        return res.data
     })
 }
