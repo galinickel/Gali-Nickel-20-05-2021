@@ -96,3 +96,14 @@ body {
 input.night{
     background-color: #2e2d2d;
 }
+
+.content .header{
+    color: whitesmoke !important;
+}
+.content .description{
+    color: #686b7c !important;
+}
+
+.content a{
+    color: #9295a8 !important;
+}
