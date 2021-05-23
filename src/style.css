@@ -97,7 +97,8 @@ input.night{
     background-color: #2e2d2d;
 }
 
-.content .header.night{
+.night .header,
+.night .description{
     color: whitesmoke !important;
 }
 .content .description.night{
