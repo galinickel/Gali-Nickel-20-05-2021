@@ -36,7 +36,6 @@ const List = props => {
                         {listType === 'favorites' ? <> <h3><i className={`${city.Country.ID.toLowerCase()} flag`}></i>{city.LocalizedName}</h3>
                             <h5>See Forecast</h5></> : <> 
                             <p><i className={`${city.Country.ID.toLowerCase()} flag`}></i>{city.LocalizedName}</p></>}
-
                     </div>
                     {listType==='favorites' && <div className="ui clearing divider">
                     </div>}

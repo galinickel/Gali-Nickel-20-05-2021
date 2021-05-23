@@ -32,6 +32,7 @@ const SearchBar = () => {
             if (!(letterCode >= 65 && letterCode <= 90) && !(letterCode >= 97 && letterCode <= 122)) return
         }
         setCity(ev.target.value)
+        if (!ev.target.value) return
         const debouncedDispatch = db(() => dispatch(searchCity(city)), 850)
         debouncedDispatch()
 
