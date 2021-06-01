@@ -28,7 +28,7 @@ const List = props => {
 
     const onSelect = (city) => {
         dispatch(setCurrCity(city))
-        history.push('/')
+        if(history.location.pathname !== "/")history.push('/')
     }
 
     const renderContents = renderArr => {
