@@ -1,10 +1,14 @@
 import { React, useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFavorite, getFavorites } from '../store/actions/index'
+import { setCurrCity } from '../store/actions/index'
+import { useHistory } from 'react-router-dom'
 
 import ListItem from './ListItem'
 
 const List = props => {
+    const history = useHistory()
+
     const dispatch = useDispatch()
     const cityList = useSelector((state) => state.cityList)
     const [favoritesToDisplay, setFavoritesToDisplay] = useState([])
@@ -22,6 +26,11 @@ const List = props => {
         setFavoritesToDisplay(res.payload)
     }
 
+    const onSelect = (city) => {
+        dispatch(setCurrCity(city))
+        history.push('/')
+    }
+
     const renderContents = renderArr => {
         if (listType === 'searchOptions') if (cityList === [] || !cityList) return
         return renderArr.map(city => {
@@ -32,6 +41,7 @@ const List = props => {
                 listType={listType}
                 toggleFavoriteCity={toggleFavoriteCity}
                 key={city.Key}
+                onSelect={onSelect}
             />
         })
     }

@@ -106,5 +106,11 @@ input.night{
 }
 
 .content a{
-    color: #9295a8 !important;
+    color: #909197 !important;
 }
+.search-result p {
+    cursor: pointer;
+
+}
+.search-result p:hover {
+text-decoration: underline;}
