@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Gali-Nickel-20-05-2021/static/css/main.52b92ffe.chunk.css",
-    "main.js": "/Gali-Nickel-20-05-2021/static/js/main.747a8f9e.chunk.js",
-    "main.js.map": "/Gali-Nickel-20-05-2021/static/js/main.747a8f9e.chunk.js.map",
+    "main.css": "/Gali-Nickel-20-05-2021/static/css/main.cd7c13bd.chunk.css",
+    "main.js": "/Gali-Nickel-20-05-2021/static/js/main.57d87b0c.chunk.js",
+    "main.js.map": "/Gali-Nickel-20-05-2021/static/js/main.57d87b0c.chunk.js.map",
     "runtime-main.js": "/Gali-Nickel-20-05-2021/static/js/runtime-main.eb953bd7.js",
     "runtime-main.js.map": "/Gali-Nickel-20-05-2021/static/js/runtime-main.eb953bd7.js.map",
-    "static/js/2.949bd17e.chunk.js": "/Gali-Nickel-20-05-2021/static/js/2.949bd17e.chunk.js",
-    "static/js/2.949bd17e.chunk.js.map": "/Gali-Nickel-20-05-2021/static/js/2.949bd17e.chunk.js.map",
+    "static/js/2.cf4fc19f.chunk.js": "/Gali-Nickel-20-05-2021/static/js/2.cf4fc19f.chunk.js",
+    "static/js/2.cf4fc19f.chunk.js.map": "/Gali-Nickel-20-05-2021/static/js/2.cf4fc19f.chunk.js.map",
     "index.html": "/Gali-Nickel-20-05-2021/index.html",
-    "static/css/main.52b92ffe.chunk.css.map": "/Gali-Nickel-20-05-2021/static/css/main.52b92ffe.chunk.css.map",
-    "static/js/2.949bd17e.chunk.js.LICENSE.txt": "/Gali-Nickel-20-05-2021/static/js/2.949bd17e.chunk.js.LICENSE.txt",
+    "static/css/main.cd7c13bd.chunk.css.map": "/Gali-Nickel-20-05-2021/static/css/main.cd7c13bd.chunk.css.map",
+    "static/js/2.cf4fc19f.chunk.js.LICENSE.txt": "/Gali-Nickel-20-05-2021/static/js/2.cf4fc19f.chunk.js.LICENSE.txt",
     "static/media/style.css": "/Gali-Nickel-20-05-2021/static/media/night.f7629e0a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.eb953bd7.js",
-    "static/js/2.949bd17e.chunk.js",
-    "static/css/main.52b92ffe.chunk.css",
-    "static/js/main.747a8f9e.chunk.js"
+    "static/js/2.cf4fc19f.chunk.js",
+    "static/css/main.cd7c13bd.chunk.css",
+    "static/js/main.57d87b0c.chunk.js"
   ]
 }
